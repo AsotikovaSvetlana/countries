@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMoonOutline, IoMoon } from "react-icons/io5";
+import { IoSunny, IoMoon } from "react-icons/io5";
 import { StyledHeader } from "./styles/StyledHeader";
 import { Container } from "../Container";
 import { Flex } from "../Flex";
@@ -17,11 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => (
       <Flex justify="space-between" align="center" padding="2rem 0">
         <Title>Where is the world?</Title>
         <ThemeSwitcher toggleTheme={toggleTheme}>
-          {theme === "light" ? (
-            <IoMoonOutline size="14px" />
-          ) : (
-            <IoMoon size="14px" />
-          )}{" "}
+          {theme === "light" ? <IoSunny size="16px" /> : <IoMoon size="14px" />}{" "}
           <span style={{ marginLeft: "0.75rem" }}>{theme} Theme</span>
         </ThemeSwitcher>
       </Flex>
