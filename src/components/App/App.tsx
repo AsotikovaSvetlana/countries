@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "../../common/styles";
-import { Home } from "../../pages/Home";
+import { HomePage } from "../../pages/HomePage";
 import { Header } from "../Header";
+import { Main } from "./components/Main";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -33,11 +34,11 @@ function App() {
       <>
         <GlobalStyles />
         <Header toggleTheme={toggleTheme} theme={theme} />
-        <main>
+        <Main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
           </Routes>
-        </main>
+        </Main>
       </>
     </ThemeProvider>
   );
