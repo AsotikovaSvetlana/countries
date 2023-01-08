@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Country } from "./types";
+import { Country } from "../types";
 
 export const CountriesAPI = {
   baseUrl: "https://restcountries.com/v2",
