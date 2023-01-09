@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "../../common/styles";
 import { HomePage } from "../../pages/HomePage";
+import { CountryPage } from "../../pages/CountryPage";
 import { Header } from "../Header";
 import { Main } from "./components/Main";
 import useTheme from "../../common/hooks/useTheme";
@@ -18,6 +19,7 @@ function App() {
         <Main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/country/:name" element={<CountryPage />} />
           </Routes>
         </Main>
       </>

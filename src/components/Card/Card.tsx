@@ -15,10 +15,11 @@ interface CardProps {
   img: string;
   name: string;
   details: Detail[];
+  onClick: () => void;
 }
 
-export const Card: React.FC<CardProps> = ({ img, name, details }) => (
-  <StyledCard>
+export const Card: React.FC<CardProps> = ({ img, name, details, onClick }) => (
+  <StyledCard onClick={onClick}>
     <CardImage src={img} alt={name} />
     <CardInfo>
       <CardTitle>{name}</CardTitle>

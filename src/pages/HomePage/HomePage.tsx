@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { CountriesAPI } from "../../api/CountriesAPI";
 import { Card } from "../../components/Card";
 import { Controls } from "../../components/Controls";
@@ -7,6 +8,7 @@ import { Country } from "../../types";
 
 export const HomePage = () => {
   const [countries, setCountries] = useState<Country[] | []>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -43,7 +45,15 @@ export const HomePage = () => {
             ],
           };
 
-          return <Card {...data} />;
+          return (
+            <Card
+              key={item.name}
+              onClick={() =>
+                navigate(`/country/${item.name.toLocaleLowerCase()}`)
+              }
+              {...data}
+            />
+          );
         })}
       </List>
     </>
