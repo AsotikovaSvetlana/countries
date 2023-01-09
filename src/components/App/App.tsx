@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "../../common/styles";
 import { HomePage } from "../../pages/HomePage";
 import { CountryPage } from "../../pages/CountryPage";
+import { NotFoundPage } from "../../pages/NotFoundPage";
 import { Header } from "../Header";
 import { Main } from "./components/Main";
 import useTheme from "../../common/hooks/useTheme";
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/country/:name" element={<CountryPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Main>
       </>
