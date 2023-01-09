@@ -5,29 +5,10 @@ import { GlobalStyles, lightTheme, darkTheme } from "../../common/styles";
 import { HomePage } from "../../pages/HomePage";
 import { Header } from "../Header";
 import { Main } from "./components/Main";
+import useTheme from "../../common/hooks/useTheme";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const isLightMode = theme === "light";
-
-  const toggleTheme = (e: React.MouseEvent<HTMLDivElement>) => {
-    const newTheme = isLightMode ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (savedTheme && ["dark", "light"].includes(savedTheme)) {
-      setTheme(savedTheme);
-    } else if (prefersDark) {
-      setTheme("dark");
-    }
-  }, []);
+  const { theme, isLightMode, toggleTheme } = useTheme();
 
   return (
     <ThemeProvider theme={isLightMode ? lightTheme : darkTheme}>
