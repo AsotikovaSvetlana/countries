@@ -7,16 +7,16 @@ import { CountryPage } from "../../pages/CountryPage";
 import { NotFoundPage } from "../../pages/NotFoundPage";
 import { Header } from "../Header";
 import { Main } from "./components/Main";
-import useTheme from "../../common/hooks/useTheme";
+import { useAppSelector } from "../../store/hooks";
 
 function App() {
-  const { theme, isLightMode, toggleTheme } = useTheme();
+  const theme = useAppSelector((state) => state.theme);
 
   return (
-    <ThemeProvider theme={isLightMode ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <>
         <GlobalStyles />
-        <Header toggleTheme={toggleTheme} theme={theme} />
+        <Header />
         <Main>
           <Routes>
             <Route path="/" element={<HomePage />} />
