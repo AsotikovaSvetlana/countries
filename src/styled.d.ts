@@ -6,5 +6,6 @@ declare module "styled-components" {
     bg_color: string;
     accent_color: string;
     shadow: string;
+    loader_bg: string;
   }
 }

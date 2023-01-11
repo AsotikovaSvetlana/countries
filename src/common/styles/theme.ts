@@ -3,6 +3,7 @@ export const darkTheme = {
   bg_color: "#202c37",
   accent_color: "#2b3945",
   shadow: "rgba(245, 245, 245, 0.2) 0 0 8px",
+  loader_bg: "#fff",
 };
 
 export const lightTheme = {
@@ -10,4 +11,5 @@ export const lightTheme = {
   bg_color: "#fafafa",
   accent_color: "#ffffff",
   shadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+  loader_bg: "#2b3945",
 };

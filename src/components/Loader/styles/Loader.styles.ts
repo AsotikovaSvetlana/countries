@@ -20,7 +20,7 @@ export const Content = styled.span`
     height: 48px;
     margin: 8px;
     border-radius: 50%;
-    background: #fff;
+    background: ${({ theme }) => theme.loader_bg};
     animation: coin-flip 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
 
