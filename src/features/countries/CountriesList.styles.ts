@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledList = styled.section`
+export const CountriesList = styled.section`
   width: 100%;
   padding: 2rem 0;
   display: grid;
