@@ -1,16 +1,15 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
-import { StyledSearch } from "./styles/StyledSearch";
-import { Input } from "./components/Input";
+import * as S from "./styles/Search.styles";
+import useSearch from "../../features/controls/hooks/useSearch";
 
-interface SearchProps {
-  value: string;
-  handleSearch: (text: string) => void;
-}
+export const Search = () => {
+  const { search, handleSearch } = useSearch();
 
-export const Search: React.FC<SearchProps> = ({ value, handleSearch }) => (
-  <StyledSearch>
-    <IoSearch />
-    <Input onChange={(e) => handleSearch(e.target.value)} value={value} />
-  </StyledSearch>
-);
+  return (
+    <S.Search>
+      <IoSearch />
+      <S.Input value={search} onChange={handleSearch} />
+    </S.Search>
+  );
+};

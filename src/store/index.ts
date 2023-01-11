@@ -1,9 +1,11 @@
 import { CountriesAPI } from "./../api/CountriesAPI";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import themeReducer from "../features/theme/theme-slice";
+import controlsReducer from "../features/controls/controls-slice";
 
 const rootReducer = combineReducers({
   theme: themeReducer,
+  controls: controlsReducer,
 });
 
 const store = configureStore({

@@ -1,31 +1,19 @@
 import React from "react";
-import { StyledCustomSelect } from "./styles/StyledCustomSelect";
-import { SelectOption } from "../../types";
-import { SingleValue } from "react-select";
+import * as S from "./styles/CustomSelect.styles";
+import { options, optionsMap } from "../../components/CustomSelect/data";
+import useSelect from "../../features/controls/hooks/useSelect";
 
-interface CustomSelectProps {
-  options: SelectOption[];
-  placeholder: string;
-  isClearable: boolean;
-  isSearchable: boolean;
-  value: SelectOption | "";
-  onChange: (reg: SingleValue<SelectOption | "">) => void;
-}
+export const CustomSelect = () => {
+  const { region, handleSelect } = useSelect();
 
-export const CustomSelect: React.FC<CustomSelectProps> = ({
-  options,
-  value,
-  placeholder,
-  isClearable,
-  isSearchable,
-  onChange,
-}) => (
-  <StyledCustomSelect
-    options={options}
-    value={value}
-    placeholder={placeholder}
-    isClearable={isClearable}
-    isSearchable={isSearchable}
-    onChange={onChange}
-  />
-);
+  return (
+    <S.CustomSelect
+      options={options}
+      value={region in optionsMap ? optionsMap[region] : ""}
+      placeholder="Filter by Region"
+      isClearable
+      isSearchable={false}
+      onChange={handleSelect}
+    />
+  );
+};

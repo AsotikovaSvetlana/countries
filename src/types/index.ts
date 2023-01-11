@@ -1,2 +1,2 @@
-export * from "./select";
+export * from "./region";
 export * from "./country";

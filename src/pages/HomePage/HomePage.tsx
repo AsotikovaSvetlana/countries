@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CountriesAPI } from "../../api/CountriesAPI";
 import { Card } from "../../components/Card";
-import { Controls } from "../../components/Controls";
+import { Controls } from "../../features/controls/Controls";
 import { List } from "../../components/List";
 import { Country } from "../../types";
 
