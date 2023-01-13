@@ -14,9 +14,9 @@ export const CountriesAPI = {
     );
     return res.data;
   },
-  async getCountryByName(name: string): Promise<Country[]> {
+  async getCountryByName(name: string): Promise<Country> {
     const res = await axios.get(`${this.baseUrl}/name/${name}`);
-    return res.data;
+    return res.data[0];
   },
   async getCountryByCode(code: string): Promise<Country[]> {
     const res = await axios.get(`${this.baseUrl}/alpha?codes=${code}`);

@@ -1,26 +1,23 @@
 import React from "react";
-import { IoSunny, IoMoon } from "react-icons/io5";
-import { StyledHeader } from "./styles/StyledHeader";
+import * as S from "./styles/Header.styles";
 import { Container } from "../Container";
 import { Flex } from "../Flex";
-import { Title } from "./components/Title";
-import { ThemeSwitcher } from "./components/ThemeSwitcher";
+import { ThemeSwitcher } from "../../features/theme/ThemeSwitcher";
+import useControls from "../../features/controls/hooks/useCleanControls";
 
-interface HeaderProps {
-  theme: string;
-  toggleTheme: (e: React.MouseEvent<HTMLDivElement>) => void;
-}
+export const Header = () => {
+  const cleanControls = useControls();
 
-export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => (
-  <StyledHeader>
-    <Container>
-      <Flex justify="space-between" align="center" padding="2rem 0">
-        <Title>Where is the world?</Title>
-        <ThemeSwitcher toggleTheme={toggleTheme}>
-          {theme === "light" ? <IoSunny size="16px" /> : <IoMoon size="14px" />}{" "}
-          <span style={{ marginLeft: "0.75rem" }}>{theme} Theme</span>
-        </ThemeSwitcher>
-      </Flex>
-    </Container>
-  </StyledHeader>
-);
+  return (
+    <S.Header>
+      <Container>
+        <Flex justify="space-between" align="center" padding="2rem 0">
+          <S.Title to="/" onClick={cleanControls}>
+            Where is the world?
+          </S.Title>
+          <ThemeSwitcher />
+        </Flex>
+      </Container>
+    </S.Header>
+  );
+};
