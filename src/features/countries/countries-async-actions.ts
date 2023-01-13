@@ -1,9 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Country } from "../../types";
+import { Country, Extra } from "../../types";
 
-export const getCountries = createAsyncThunk<Country[], void, { extra: any }>(
+export const getCountries = createAsyncThunk<Country[], void, { extra: Extra }>(
   "@countries/fetch-countries",
-  async (_, { extra: CountriesAPI }) => {
-    return CountriesAPI.getAllCountries();
-  }
+  (_, { extra: { api } }) => api.getAllCountries()
 );

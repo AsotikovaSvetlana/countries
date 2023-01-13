@@ -17,7 +17,9 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {
-        extraArgument: CountriesAPI,
+        extraArgument: {
+          api: CountriesAPI,
+        },
       },
       serializableCheck: false,
     }),
