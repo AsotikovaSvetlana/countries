@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Region } from "../../types";
 
-type InitialStateType = {
+type ControlsType = {
   search: string;
-  region: string;
+  region: Region | "";
 };
 
-const initialState: InitialStateType = {
+const initialState: ControlsType = {
   search: "",
   region: "",
 };
@@ -17,7 +18,7 @@ const controlsSlice = createSlice({
     setSearch: (state, action: PayloadAction<string>) => {
       state.search = action.payload;
     },
-    setRegion: (state, action: PayloadAction<string>) => {
+    setRegion: (state, action: PayloadAction<Region | "">) => {
       state.region = action.payload;
     },
     clearControls: () => initialState,

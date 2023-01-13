@@ -1,6 +1,10 @@
 import { Region } from "../../../types";
 
-export const optionsMap: any = {
+type RegionOption = {
+  [Key in Region]: { value: Key; label: Key };
+};
+
+export const optionsMap: RegionOption = {
   Africa: { value: "Africa", label: "Africa" },
   America: { value: "America", label: "America" },
   Asia: { value: "Asia", label: "Asia" },
@@ -8,4 +12,4 @@ export const optionsMap: any = {
   Oceania: { value: "Oceania", label: "Oceania" },
 };
 
-export const options: Region[] = Object.values(optionsMap);
+export const options = Object.values(optionsMap);
