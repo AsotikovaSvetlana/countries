@@ -1,10 +1,10 @@
 import React from "react";
-import { StyledCardInfo } from "./styles/StyledCardInfo";
+import * as S from "./styles/CardInfo.styles";
 
 interface CardInfoProps {
   children: React.ReactNode;
 }
 
 export const CardInfo: React.FC<CardInfoProps> = ({ children }) => (
-  <StyledCardInfo>{children}</StyledCardInfo>
+  <S.CardInfo>{children}</S.CardInfo>
 );

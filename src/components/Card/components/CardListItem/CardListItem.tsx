@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCardListItem } from "./styles/StyledCardListItem";
+import * as S from "./styles/CardListItem.styles";
 
 interface CardListItemProps {
   title: string;
@@ -10,7 +10,7 @@ export const CardListItem: React.FC<CardListItemProps> = ({
   title,
   description,
 }) => (
-  <StyledCardListItem>
+  <S.CardListItem>
     <span style={{ fontWeight: "800" }}>{title}:</span> {description}
-  </StyledCardListItem>
+  </S.CardListItem>
 );

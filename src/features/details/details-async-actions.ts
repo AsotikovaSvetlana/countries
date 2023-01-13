@@ -10,6 +10,6 @@ export const getBorderCountries = createAsyncThunk<
   Country[],
   string,
   { extra: any }
->("@details/fetch-borders",
-  async (codes, { extra: CountriesAPI }) => CountriesAPI.getCountryByCode(codes)
+>("@details/fetch-borders", async (codes, { extra: CountriesAPI }) =>
+  CountriesAPI.getCountriesByCode(codes)
 );

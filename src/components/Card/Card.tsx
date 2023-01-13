@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCard } from "./styles/StyledCard";
+import * as S from "./styles/Card.styles";
 import { CardImage } from "./components/CardImage";
 import { CardInfo } from "./components/CardInfo";
 import { CardTitle } from "./components/CardTitle";
@@ -19,7 +19,7 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({ img, name, details, onClick }) => (
-  <StyledCard onClick={onClick}>
+  <S.Card onClick={onClick}>
     <CardImage src={img} alt={name} />
     <CardInfo>
       <CardTitle>{name}</CardTitle>
@@ -29,5 +29,5 @@ export const Card: React.FC<CardProps> = ({ img, name, details, onClick }) => (
         ))}
       </CardList>
     </CardInfo>
-  </StyledCard>
+  </S.Card>
 );

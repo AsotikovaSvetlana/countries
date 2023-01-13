@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface StyledFlexProps {
+interface FlexProps {
   margin?: string;
   padding?: string;
   direction?: string;
@@ -8,7 +8,7 @@ interface StyledFlexProps {
   align?: string;
 }
 
-export const StyledFlex = styled.div<StyledFlexProps>`
+export const Flex = styled.div<FlexProps>`
   margin: ${({ margin }) => margin || "0"};
   padding: ${({ padding }) => padding || "0"};
   display: flex;

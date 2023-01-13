@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const StyledTag = styled.span`
-  padding: 0 1rem;
-  line-height: 1.5;
+export const Card = styled.article`
+  border-radius: var(--br-radius);
   background-color: ${({ theme }) => theme.accent_color};
   box-shadow: ${({ theme }) => theme.shadow};
+  overflow: hidden;
   cursor: pointer;
 `;
