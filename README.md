@@ -1,6 +1,6 @@
 # :earth_americas: Countries App
 
-<h3 align="center"><a href="" target="_blank">Demo</a></h3>
+<h3 align="center"><a href="https://countries-asotikovasvetlana.vercel.app/" target="_blank">Demo</a></h3>
 
 Приложение для просмотра списка стран с детальной информацией о каждой. Доступна фильтрация по регионам и текстовый поиск.
 
