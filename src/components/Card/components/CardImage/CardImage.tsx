@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCardImage } from "./styles/StyledCardImage";
+import * as S from "./styles/CardImage.styles";
 
 interface CardImageProps {
   src: string;
@@ -7,5 +7,5 @@ interface CardImageProps {
 }
 
 export const CardImage: React.FC<CardImageProps> = ({ src, alt }) => (
-  <StyledCardImage src={src} alt={alt} />
+  <S.CardImage src={src} alt={alt} />
 );

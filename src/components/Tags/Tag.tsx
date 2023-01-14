@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledTag } from "./styles/StyledTag";
+import * as S from "./styles/Tag.styles";
 
 interface TagProps {
   text: string;
@@ -8,7 +8,7 @@ interface TagProps {
 }
 
 export const Tag: React.FC<TagProps> = ({ text, path }) => (
-  <StyledTag>
+  <S.Tag>
     <Link to={path}>{text}</Link>
-  </StyledTag>
+  </S.Tag>
 );

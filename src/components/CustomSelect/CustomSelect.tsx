@@ -9,7 +9,7 @@ export const CustomSelect = () => {
   return (
     <S.CustomSelect
       options={options}
-      value={region in optionsMap ? optionsMap[region] : ""}
+      value={region ? optionsMap[region] : ""}
       placeholder="Filter by Region"
       isClearable
       isSearchable={false}

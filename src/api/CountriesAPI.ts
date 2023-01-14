@@ -8,17 +8,11 @@ export const CountriesAPI = {
     const res = await axios.get(`${this.baseUrl}/all?fields=${this.fields}`);
     return res.data;
   },
-  async getCountriesByRegion(region: string): Promise<Country[]> {
-    const res = await axios.get(
-      `${this.baseUrl}/region/${region}?fields=${this.fields}`
-    );
-    return res.data;
-  },
   async getCountryByName(name: string): Promise<Country> {
     const res = await axios.get(`${this.baseUrl}/name/${name}`);
     return res.data[0];
   },
-  async getCountryByCode(code: string): Promise<Country[]> {
+  async getCountriesByCode(code: string): Promise<Country[]> {
     const res = await axios.get(`${this.baseUrl}/alpha?codes=${code}`);
     return res.data;
   },
