@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledCardImage = styled.img`
+export const CardImage = styled.img`
   width: 100%;
   height: 150px;
   display: block;

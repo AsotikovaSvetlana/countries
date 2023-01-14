@@ -1,10 +1,10 @@
 import React from "react";
-import { StyledCardList } from "./styles/StyledCardList";
+import * as S from "./styles/CardList.styles";
 
 interface CardListProps {
   children: React.ReactNode;
 }
 
 export const CardList: React.FC<CardListProps> = ({ children }) => (
-  <StyledCardList>{children}</StyledCardList>
+  <S.CardList>{children}</S.CardList>
 );

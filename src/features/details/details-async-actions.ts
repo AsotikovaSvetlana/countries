@@ -1,15 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Country } from "../../types";
+import { Country, Extra } from "../../types";
 
-export const getDetails = createAsyncThunk<Country, string, { extra: any }>(
+export const getDetails = createAsyncThunk<Country, string, { extra: Extra }>(
   "@details/fetch-details",
-  async (name, { extra: CountriesAPI }) => CountriesAPI.getCountryByName(name)
+  (name, { extra: { api } }) => api.getCountryByName(name)
 );
 
 export const getBorderCountries = createAsyncThunk<
   Country[],
   string,
-  { extra: any }
->("@details/fetch-borders",
-  async (codes, { extra: CountriesAPI }) => CountriesAPI.getCountryByCode(codes)
+  { extra: Extra }
+>("@details/fetch-borders", (codes, { extra: { api } }) =>
+  api.getCountriesByCode(codes)
 );

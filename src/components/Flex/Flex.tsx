@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledFlex } from "./styles/StyledFlex";
+import * as S from "./styles/Flex.styles";
 
 interface FlexProps {
   children: React.ReactNode;
@@ -17,16 +17,14 @@ export const Flex: React.FC<FlexProps> = ({
   direction,
   justify,
   align,
-}) => {
-  return (
-    <StyledFlex
-      margin={margin}
-      padding={padding}
-      direction={direction}
-      justify={justify}
-      align={align}
-    >
-      {children}
-    </StyledFlex>
-  );
-};
+}) => (
+  <S.Flex
+    margin={margin}
+    padding={padding}
+    direction={direction}
+    justify={justify}
+    align={align}
+  >
+    {children}
+  </S.Flex>
+);

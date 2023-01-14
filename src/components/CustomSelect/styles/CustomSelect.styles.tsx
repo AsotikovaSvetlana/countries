@@ -1,12 +1,12 @@
 import styled, { DefaultTheme } from "styled-components";
 import Select, { OptionProps, Props, CSSObjectWithLabel } from "react-select";
-import { Region } from "../../../types";
+import { SelectOption } from "../../../types";
 
 interface SelectThemeProps {
   theme: DefaultTheme;
 }
 
-function MySelect(props: Props<Region | "", false>) {
+function MySelect(props: Props<SelectOption | "", false>) {
   return <Select {...props} />;
 }
 
@@ -24,7 +24,7 @@ export const CustomSelect = styled(MySelect).attrs({
     }),
     option: (
       base: CSSObjectWithLabel,
-      state: OptionProps<Region | "", false>
+      state: OptionProps<SelectOption | "", false>
     ) => ({
       ...base,
       cursor: "pointer",

@@ -1,10 +1,10 @@
 import React from "react";
-import { StyledTagMenu } from "./styles/StyledTagMenu";
+import * as S from "./styles/TagMenu.styles";
 
 interface TagMenuProps {
   children: React.ReactNode;
 }
 
 export const TagMenu: React.FC<TagMenuProps> = ({ children }) => (
-  <StyledTagMenu>{children}</StyledTagMenu>
+  <S.TagMenu>{children}</S.TagMenu>
 );

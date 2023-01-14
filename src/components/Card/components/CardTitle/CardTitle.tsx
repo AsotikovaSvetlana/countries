@@ -1,10 +1,10 @@
 import React from "react";
-import { StyledCardTitle } from "./styles/StyledCardTitle";
+import * as S from "./styles/CardTitle.styles";
 
 interface CardTitleProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const CardTitle: React.FC<CardTitleProps> = ({ children }) => (
-  <StyledCardTitle>{children}</StyledCardTitle>
+  <S.CardTitle>{children}</S.CardTitle>
 );

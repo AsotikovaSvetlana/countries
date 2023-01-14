@@ -1,3 +1,5 @@
+import { Region } from "./region";
+
 export type Country = {
   name: string;
   capital: string;
@@ -6,14 +8,14 @@ export type Country = {
     svg: string;
   };
   population: number;
-  region: string;
+  region: Region;
   alpha3Code: string;
-  borders?: string[];
   nativeName: string;
   subregion: string;
   topLevelDomain: string[];
   currencies: Currency[];
   languages: Language[];
+  borders?: string[];
 };
 
 type Currency = {

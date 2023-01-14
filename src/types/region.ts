@@ -1,4 +1,1 @@
-export type Region = {
-  value: string;
-  label: string;
-};
+export type Region = "Africa" | "America" | "Asia" | "Europe" | "Oceania";
